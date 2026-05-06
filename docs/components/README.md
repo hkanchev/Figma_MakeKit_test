@@ -4,13 +4,14 @@ The 5R Design System component library provides reusable React components built 
 
 ## 📦 Available Components
 
-> **Status**: Components are being extracted from the Figma design library. Check back soon!
+### ✅ Implemented
+
+- [x] **[Button](./Button.md)** - Primary, secondary, and tertiary button variants with multiple sizes
 
 ### Planned Components
 
-Based on the Figma design library, these components will be available:
+Based on the Figma design library, these components will be added:
 
-- [ ] **Button** - Primary, secondary, and tertiary button variants
 - [ ] **Input** - Text inputs with validation states
 - [ ] **Card** - Content containers
 - [ ] **Modal** - Dialog overlays
@@ -182,9 +183,9 @@ interface ButtonProps {
 
 | Component | Figma | Code | Docs | Tests | Status |
 |-----------|-------|------|------|-------|--------|
-| Button | ✅ | ⏳ | ⏳ | ⏳ | Planned |
-| Input | ✅ | ⏳ | ⏳ | ⏳ | Planned |
-| Card | ✅ | ⏳ | ⏳ | ⏳ | Planned |
+| Button | ✅ | ✅ | ✅ | ⬜ | Published |
+| Input | ⬜ | ⬜ | ⬜ | ⬜ | Planned |
+| Card | ⬜ | ⬜ | ⬜ | ⬜ | Planned |
 
 *Legend: ✅ Done | ⏳ In Progress | ⬜ Not Started*
 
