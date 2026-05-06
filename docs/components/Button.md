@@ -20,6 +20,7 @@ import { Button } from '../../5rDesignSystem/components/Button'
 | size | `'small' \| 'medium' \| 'large'` | `'medium'` | No | Button size |
 | disabled | `boolean` | `false` | No | Disabled state |
 | fullWidth | `boolean` | `false` | No | Take full width of container |
+| rightIcon | `React.ReactNode` | - | No | Optional icon to display on the right |
 | children | `React.ReactNode` | - | Yes | Button content |
 | onClick | `() => void` | - | No | Click handler |
 
@@ -65,6 +66,24 @@ Additional props from `React.ButtonHTMLAttributes<HTMLButtonElement>` are also s
 </Button>
 ```
 
+### With Right Icon
+
+```tsx
+// Arrow icon component
+function ArrowRight() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M3.33333 8H12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+<Button rightIcon={<ArrowRight />}>
+  Next Step
+</Button>
+```
+
 ### With Event Handlers
 
 ```tsx
@@ -90,16 +109,18 @@ Additional props from `React.ButtonHTMLAttributes<HTMLButtonElement>` are also s
 
 | Token | Usage | Value |
 |-------|-------|-------|
-| `--brand/accent` | Primary variant background | `#E63946` |
+| `--color/neutral/000` | Primary variant background (Figma match) | `#0D0D0D` |
+| `--brand/accent` | Alternative accent color | `#E63946` |
 | `--surface/default` | Secondary variant background | `#0D0D0D` |
 | `--light-text` | Text color on dark backgrounds | `#FFFFFF` |
 | `--color/neutral/600` | Secondary border | `#A3A3A3` |
-| `--xs` | Small button padding (vertical) | `8px` |
-| `--sm` | Small button padding (horizontal) | `12px` |
-| `--md` | Large button padding (vertical) | `16px` |
-| `--lg` | Medium button padding (horizontal) | `20px` |
-| `--xl` | Large button padding (horizontal) | `24px` |
-| `--rounded-none` | Border radius | `0` |
+| `--xs` | Medium button vertical padding, gap between text and icon | `8px` |
+| `--sm` | Small button horizontal padding | `12px` |
+| `--md` | Medium button horizontal padding | `16px` |
+| `--lg` | Medium button horizontal padding | `20px` |
+| `--xl` | Large button horizontal padding | `24px` |
+| `--rounded-sm` | Border radius (Figma match) | `8px` |
+| `--rounded-none` | No border radius | `0` |
 
 ## States & Variants
 
@@ -223,6 +244,15 @@ For one-off customizations, you can pass inline styles:
 - Hover/active states use CSS transitions, not Figma interactions
 
 ## Changelog
+
+### v0.1.1 (2026-05-06)
+- **Figma Design Match**: Updated button to match exact Figma design
+- Added `rightIcon` prop for optional right-side icons
+- Changed border radius from 0 to 8px (`--rounded-sm`)
+- Updated primary variant background to use `--color/neutral/000` (#0D0D0D)
+- Adjusted padding to match Figma: 8px vertical, 16px horizontal for medium size
+- Added 8px gap between text and icon
+- Updated text color to #fafafa for better Figma match
 
 ### v0.1.0 (2026-05-06)
 - Initial Button component implementation

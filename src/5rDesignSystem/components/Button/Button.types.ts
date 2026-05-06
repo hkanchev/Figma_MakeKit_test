@@ -24,6 +24,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean
 
   /**
+   * Optional icon to display on the right side of the button
+   */
+  rightIcon?: React.ReactNode
+
+  /**
    * Button content
    */
   children: React.ReactNode

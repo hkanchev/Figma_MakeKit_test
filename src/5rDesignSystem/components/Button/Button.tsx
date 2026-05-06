@@ -6,6 +6,7 @@ export function Button({
   size = 'medium',
   disabled = false,
   fullWidth = false,
+  rightIcon,
   children,
   onClick,
   ...rest
@@ -14,8 +15,8 @@ export function Button({
     switch (variant) {
       case 'primary':
         return {
-          backgroundColor: 'var(--brand/accent)',
-          color: 'var(--light-text)',
+          backgroundColor: 'var(--color/neutral/000)',
+          color: '#fafafa',
           border: 'none',
         }
       case 'secondary':
@@ -43,13 +44,14 @@ export function Button({
           fontSize: '14px',
         }
       case 'medium':
+        // Match Figma: 8px vertical, 16px horizontal
         return {
-          padding: `var(--sm)px var(--lg)px`,
+          padding: `var(--xs)px var(--md)px`,
           fontSize: '16px',
         }
       case 'large':
         return {
-          padding: `var(--md)px var(--xl)px`,
+          padding: `var(--sm)px var(--xl)px`,
           fontSize: '18px',
         }
       default:
@@ -64,17 +66,33 @@ export function Button({
       style={{
         ...getVariantStyles(),
         ...getSizeStyles(),
-        borderRadius: 'var(--rounded-none)',
+        borderRadius: `var(--rounded-sm)px`,
         cursor: disabled ? 'not-allowed' : 'pointer',
         fontWeight: 500,
         transition: 'all 0.2s ease',
         opacity: disabled ? 0.5 : 1,
         width: fullWidth ? '100%' : 'auto',
         fontFamily: 'inherit',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: rightIcon ? `var(--xs)px` : '0',
       }}
       {...rest}
     >
       {children}
+      {rightIcon && (
+        <span
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            width: '16px',
+            height: '16px',
+          }}
+        >
+          {rightIcon}
+        </span>
+      )}
     </button>
   )
 }

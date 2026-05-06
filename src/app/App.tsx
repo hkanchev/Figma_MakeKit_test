@@ -1,6 +1,16 @@
 import { Button } from '../5rDesignSystem/components/Button'
 import '../5rDesignSystem/styles.css'
 
+// Arrow icon matching Figma design
+function ArrowRight() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M3.33333 8H12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
 export default function App() {
   return (
     <div style={{
@@ -24,6 +34,36 @@ export default function App() {
           5R Design System - Button Component
         </h1>
 
+        {/* Figma Match Section */}
+        <section style={{ marginBottom: 'var(--3xl)px' }}>
+          <h2 style={{
+            color: 'var(--color/neutral/100)',
+            marginBottom: 'var(--md)px',
+            fontSize: '24px',
+            fontWeight: 500
+          }}>
+            Figma Design Match
+          </h2>
+          <div style={{
+            backgroundColor: 'var(--card-background)',
+            padding: 'var(--xl)px',
+            borderRadius: `var(--rounded-sm)px`,
+            border: '1px solid var(--color/neutral/800)',
+            marginBottom: 'var(--md)px'
+          }}>
+            <Button variant="primary" rightIcon={<ArrowRight />}>
+              Заяви
+            </Button>
+          </div>
+          <p style={{
+            color: 'var(--color/neutral/600)',
+            fontSize: '14px',
+            fontStyle: 'italic'
+          }}>
+            ✅ Matches Figma design: 8px border radius, 16px horizontal padding, 8px vertical padding, with right arrow icon
+          </p>
+        </section>
+
         {/* Variants Section */}
         <section style={{ marginBottom: 'var(--3xl)px' }}>
           <h2 style={{
@@ -39,7 +79,7 @@ export default function App() {
             gap: 'var(--md)px',
             flexWrap: 'wrap'
           }}>
-            <Button variant="primary">Primary Button</Button>
+            <Button variant="primary" rightIcon={<ArrowRight />}>Primary Button</Button>
             <Button variant="secondary">Secondary Button</Button>
             <Button variant="tertiary">Tertiary Button</Button>
           </div>
@@ -114,6 +154,7 @@ export default function App() {
           </h2>
           <Button
             variant="primary"
+            rightIcon={<ArrowRight />}
             onClick={() => alert('Button clicked! 🎉')}
           >
             Click Me
@@ -155,10 +196,10 @@ export default function App() {
               gap: 'var(--md)px',
               flexWrap: 'wrap'
             }}>
-              <Button variant="primary" size="large">
+              <Button variant="primary" size="large" rightIcon={<ArrowRight />}>
                 Subscribe Now
               </Button>
-              <Button variant="tertiary" size="large">
+              <Button variant="tertiary" size="large" rightIcon={<ArrowRight />}>
                 Learn More
               </Button>
             </div>
